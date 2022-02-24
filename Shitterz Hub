@@ -25,6 +25,8 @@ PlayerMods:NewSlider("Jump Power", "Makes you jump higher", 300, 0, function(j)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
 end)
 
+
+
 GunGivers:NewButton("Shotgun", "Gives Player Shotgun", function()
  
 local args = {
@@ -70,6 +72,12 @@ MiscSection:NewKeybind("Toggle Key", "Sets the key to toggle the GUI", Enum.KeyC
 	Library:ToggleUI()
 end)
 
+MiscSection:NewButton("Give Crude Knife", "... are you dumb?", function()
+local Knife = game.ReplicatedStorage.Tools.["Crude Knife"]
+
+local Clone = Knife:Clone()
+Clone.Parent = game.Players.LocalPlayer.Characters
+end)
 
 
 end
