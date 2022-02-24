@@ -78,7 +78,7 @@ MiscSection:NewButton("Give Crude Knife", "... are you dumb?", function()
     local Knife = game.ReplicatedStorage.Tools["Crude Knife"]
 
 local Clone = Knife:Clone()
-Clone.Parent = game.Players.LocalPlayer.BackPack
+Clone.Parent = game.Players.LocalPlayer.Backpack
 end)
 
 end
