@@ -51,6 +51,10 @@ GunGivers:NewButton("AK47", "Gives player AK", function()
 
 workspace.Remote.ItemHandler:InvokeServer(unpack(args))
     end)
+    
+    GunGivers:NewButton("RPG", "we do a little trolling", function()
+    game.Players.LocalPlayer:Kick("We do a little trolling")
+    end)
 
 MiscSection:NewButton("Give Keycard (doesnt work sometimes)", "... are you dumb?", function()
     function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
