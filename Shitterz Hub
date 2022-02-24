@@ -73,10 +73,10 @@ MiscSection:NewKeybind("Toggle Key", "Sets the key to toggle the GUI", Enum.KeyC
 end)
 
 MiscSection:NewButton("Give Crude Knife", "... are you dumb?", function()
-local Knife = game.ReplicatedStorage.Tools.["Crude Knife"]
+local Knife = game.ReplicatedStorage.Tools["Crude Knife"]
 
 local Clone = Knife:Clone()
-Clone.Parent = game.Players.LocalPlayer.Character
+Clone.Parent = game.Players.LocalPlayer.BackPack
 end)
 
 
