@@ -1,0 +1,71 @@
+if game.PlaceId == 155615604 then --Prison Life--
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Shitterz Hub, prison life", "LightTheme")
+local PlayerTab = Window:NewTab("Player")
+local GunsTab = Window:NewTab("Guns")
+
+local Misc = Window:NewTab("Misc")
+
+--// Sections \\--
+local PlayerMods = PlayerTab:NewSection("Player Mods")
+
+local GunGivers = GunsTab:NewSection("Give Guns")
+
+local MiscSection = Misc:NewSection("Misc")
+
+--// Functions \\--
+
+PlayerMods:NewSlider("Speed", "Makes you go faster", 300, 0, function(s) -- 300 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+PlayerMods:NewSlider("Jump Power", "Makes you jump higher", 300, 0, function(j)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = j
+end)
+
+GunGivers:NewButton("Shotgun", "Gives Player Shotgun", function()
+ 
+local args = {
+    [1] = workspace["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP,
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+end)
+
+GunGivers:NewButton("Pistol", "Gives player a pistol", function()
+    function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+
+local args = {
+    [1] = workspace["Prison_ITEMS"].giver["M9"].ITEMPICKUP,
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+end)
+
+GunGivers:NewButton("AK47", "Gives player AK", function()
+    local args = {
+    [1] = workspace["Prison_ITEMS"].giver["AK-47"].ITEMPICKUP,
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+    end)
+
+MiscSection:NewButton("Give Keycard (doesnt work sometimes)", "... are you dumb?", function()
+    function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+
+local args = {
+    [1] = workspace["Prison_ITEMS"].single["Key card"].ITEMPICKUP,
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+end)
+
+MiscSection:NewKeybind("Toggle Key", "Sets the key to toggle the GUI", Enum.KeyCode.Return, function()
+	Library:ToggleUI()
+end)
+
+
+
+end
